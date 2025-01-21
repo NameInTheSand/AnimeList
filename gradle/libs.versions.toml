@@ -7,7 +7,7 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
 composeBom = "2025.01.00"
 ktorFit ="2.0.0"
-ktor = "2.3.12"
+ktor = "3.0.3"
 ktorFeatures = "1.6.8"
 ksp = "2.1.0-1.0.29"
 kotlinx_serialization = "1.7.1"
@@ -19,6 +19,9 @@ navigation = "2.8.5"
 koin = "3.5.6"
 paging = "3.3.5"
 coroutines_test = "1.9.0"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+material = "1.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +53,9 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 paging = { group = "androidx.paging", name = "paging-common", version.ref = "paging" }
 paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
