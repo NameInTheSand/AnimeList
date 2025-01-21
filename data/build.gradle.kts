@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm)
     alias(libs.plugins.ktrofit)
     alias(libs.plugins.serialization)
+    alias(libs.plugins.ksp)
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -25,6 +26,7 @@ dependencies {
 
     //KtorFit
     implementation(libs.ktorfit)
+    ksp(libs.ktorfit.ksp)
     implementation(libs.ktor.converter)
     implementation(libs.ktor.serialization)
     implementation(libs.ktor.logging)
