@@ -21,6 +21,9 @@ dependencies {
 
     // Unit testing with JUnit
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+
     // MockWebServer for mocking HTTP requests
     testImplementation(libs.mockwebserver)
 

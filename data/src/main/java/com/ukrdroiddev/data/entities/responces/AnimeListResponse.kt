@@ -1,5 +1,14 @@
 package com.ukrdroiddev.data.entities.responces
 
+import com.ukrdroiddev.domain.entities.AnimeImageUiEntity
+import com.ukrdroiddev.domain.entities.DemographicUIEntity
+import com.ukrdroiddev.domain.entities.ExplicitGenreUiEntity
+import com.ukrdroiddev.domain.entities.GenreUiEntity
+import com.ukrdroiddev.domain.entities.ImageUrlsUiEntity
+import com.ukrdroiddev.domain.entities.ProducerUiEntity
+import com.ukrdroiddev.domain.entities.StudioUiEntity
+import com.ukrdroiddev.domain.entities.ThemeUiEntity
+import com.ukrdroiddev.domain.entities.TrailerUiEntity
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -53,21 +62,44 @@ data class AnimeData(
 data class Images(
     val jpg: ImageUrls,
     val webp: ImageUrls
-)
+) {
+    fun toUiEntity(): AnimeImageUiEntity {
+        return AnimeImageUiEntity(
+            jpg = this.jpg.toUiEntity(),
+            webp = this.webp.toUiEntity()
+        )
+    }
+}
 
 @Serializable
 data class ImageUrls(
     @SerialName("image_url") val imageUrl: String,
     @SerialName("small_image_url") val smallImageUrl: String,
     @SerialName("large_image_url") val largeImageUrl: String
-)
+) {
+    fun toUiEntity(): ImageUrlsUiEntity {
+        return ImageUrlsUiEntity(
+            imageUrl = this.imageUrl,
+            smallImageUrl = this.smallImageUrl,
+            largeImageUrl = this.largeImageUrl
+        )
+    }
+}
 
 @Serializable
 data class Trailer(
     @SerialName("youtube_id") val youtubeId: String?,
     val url: String?,
     @SerialName("embed_url") val embedUrl: String?
-)
+) {
+    fun toUiEntity(): TrailerUiEntity {
+        return TrailerUiEntity(
+            youtubeId = this.youtubeId,
+            url = this.url,
+            embedUrl = this.embedUrl
+        )
+    }
+}
 
 @Serializable
 data class Title(
@@ -77,23 +109,30 @@ data class Title(
 
 @Serializable
 data class Aired(
-    val from: String?,
-    val to: String?,
-    val prop: AiredProp,
-    val string: String?
+    val from: String,
+    val to: String,
+    val prop: Prop
 )
 
 @Serializable
-data class AiredProp(
-    val from: DateComponent,
-    val to: DateComponent
+data class Prop(
+    val from: From,
+    val to: To,
+    val string: String
 )
 
 @Serializable
-data class DateComponent(
-    val day: Int?,
-    val month: Int?,
-    val year: Int?
+data class From(
+    val day: Int,
+    val month: Int,
+    val year: Int
+)
+
+@Serializable
+data class To(
+    val day: Int,
+    val month: Int,
+    val year: Int
 )
 
 @Serializable
@@ -110,7 +149,14 @@ data class Producer(
     val type: String,
     val name: String,
     val url: String
-)
+) {
+    fun toUiEntity(): ProducerUiEntity {
+        return ProducerUiEntity(
+            malId = this.malId,
+            name = this.name
+        )
+    }
+}
 
 @Serializable
 data class Licensor(
@@ -126,7 +172,16 @@ data class Studio(
     val type: String,
     val name: String,
     val url: String
-)
+) {
+    fun toUiEntity(): StudioUiEntity {
+        return StudioUiEntity(
+            malId = this.malId,
+            name = this.name,
+            type = this.type,
+            url = this.url
+        )
+    }
+}
 
 @Serializable
 data class Genre(
@@ -134,7 +189,14 @@ data class Genre(
     val type: String,
     val name: String,
     val url: String
-)
+) {
+    fun toUiEntity(): GenreUiEntity {
+        return GenreUiEntity(
+            malId = this.malId,
+            name = this.name
+        )
+    }
+}
 
 @Serializable
 data class ExplicitGenre(
@@ -142,7 +204,14 @@ data class ExplicitGenre(
     val type: String,
     val name: String,
     val url: String
-)
+) {
+    fun toUiEntity(): ExplicitGenreUiEntity {
+        return ExplicitGenreUiEntity(
+            malId = this.malId,
+            name = this.name
+        )
+    }
+}
 
 @Serializable
 data class Theme(
@@ -150,7 +219,14 @@ data class Theme(
     val type: String,
     val name: String,
     val url: String
-)
+) {
+    fun toUiEntity(): ThemeUiEntity {
+        return ThemeUiEntity(
+            malId = this.malId,
+            name = this.name
+        )
+    }
+}
 
 @Serializable
 data class Demographic(
@@ -158,7 +234,14 @@ data class Demographic(
     val type: String,
     val name: String,
     val url: String
-)
+) {
+    fun toUiEntity(): DemographicUIEntity {
+        return DemographicUIEntity(
+            malId = this.malId,
+            name = this.name
+        )
+    }
+}
 
 @Serializable
 data class Pagination(
