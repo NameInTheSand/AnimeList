@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="list_horizontal_padding">16dp</dimen>
-    <dimen name="image_corner">16dp</dimen>
-    <dimen name="medium_padding">16dp</dimen>
-    <dimen name="small_padding">8dp</dimen>
-    <dimen name="extra_small_padding">4dp</dimen>
-</resources>

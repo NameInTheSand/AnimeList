@@ -2,8 +2,4 @@
 <resources>
     <string name="navigate_up">Navigate up</string>
     <string name="all_anime">All Anime</string>
-    <string name="rating">Rating</string>
-    <string name="fmt_ranking"># %1$d</string>
-    <string name="ranking">Ranking</string>
-    <string name="no_image">No image</string>
 </resources>

@@ -15,7 +15,7 @@ import kotlinx.serialization.json.Json
 
 class RemoteApi {
 
-    fun getAnimeApi(): AnimeApi {
+    fun getAnimeApi():AnimeApi {
         val ktorfit = Ktorfit.Builder().httpClient(getHttpClient()).build()
         return ktorfit.createAnimeApi()
     }
@@ -41,8 +41,8 @@ class RemoteApi {
         }
     }
 
-    companion object {
+    companion object{
         private const val REQUEST_TIMEOUT = 5000L
-        private const val BASE_URL = "api.jikan.moe/"
+        private const val BASE_URL = "https://api.jikan.moe/"
     }
 }
