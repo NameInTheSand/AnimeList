@@ -26,6 +26,7 @@ class AnimeRemoteToUiListMapper :
                 episodes = remoteEntity.episodes,
                 status = AnimeStatus.fromStatus(remoteEntity.status) ?: AnimeStatus.UPCOMING,
                 airing = remoteEntity.airing,
+                aired = remoteEntity.aired?.toUiEntity(),
                 duration = remoteEntity.duration,
                 rating = remoteEntity.rating,
                 score = remoteEntity.score,

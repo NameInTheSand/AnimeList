@@ -1,13 +1,17 @@
 package com.ukrdroiddev.data.entities.responces
 
+import com.ukrdroiddev.domain.entities.AiredUiEntity
 import com.ukrdroiddev.domain.entities.AnimeImageUiEntity
 import com.ukrdroiddev.domain.entities.DemographicUIEntity
 import com.ukrdroiddev.domain.entities.ExplicitGenreUiEntity
+import com.ukrdroiddev.domain.entities.FromUiEntity
 import com.ukrdroiddev.domain.entities.GenreUiEntity
 import com.ukrdroiddev.domain.entities.ImageUrlsUiEntity
 import com.ukrdroiddev.domain.entities.ProducerUiEntity
+import com.ukrdroiddev.domain.entities.PropUiEntity
 import com.ukrdroiddev.domain.entities.StudioUiEntity
 import com.ukrdroiddev.domain.entities.ThemeUiEntity
+import com.ukrdroiddev.domain.entities.ToUiEntity
 import com.ukrdroiddev.domain.entities.TrailerUiEntity
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -32,10 +36,10 @@ data class AnimeData(
     @SerialName("title_synonyms") val titleSynonyms: List<String>,
     val type: String,
     val source: String,
-    val episodes: Int,
+    val episodes: Int?,
     val status: String,
     val airing: Boolean,
-    val aired: Aired,
+    val aired: Aired?,
     val duration: String,
     val rating: String,
     val score: Float,
@@ -109,31 +113,64 @@ data class Title(
 
 @Serializable
 data class Aired(
-    val from: String,
-    val to: String,
-    val prop: Prop
-)
+    val from: String?,
+    val to: String?,
+    val prop: Prop?
+) {
+    fun toUiEntity(): AiredUiEntity {
+        return AiredUiEntity(
+            from = this.from,
+            to = this.to,
+            prop = this.prop?.toUiEntity()
+
+        )
+    }
+}
 
 @Serializable
 data class Prop(
-    val from: From,
-    val to: To,
-    val string: String
-)
+    val from: From?,
+    val to: To?,
+    val string: String? = null
+) {
+    fun toUiEntity(): PropUiEntity {
+        return PropUiEntity(
+            from = this.from?.toUiEntity(),
+            to = this.to?.toUiEntity(),
+            string = this.string
+        )
+    }
+}
 
 @Serializable
 data class From(
-    val day: Int,
-    val month: Int,
-    val year: Int
-)
+    val day: Int?,
+    val month: Int?,
+    val year: Int?
+) {
+    fun toUiEntity(): FromUiEntity {
+        return FromUiEntity(
+            day = this.day,
+            month = this.month,
+            year = this.year
+        )
+    }
+}
 
 @Serializable
 data class To(
-    val day: Int,
-    val month: Int,
-    val year: Int
-)
+    val day: Int?,
+    val month: Int?,
+    val year: Int?
+) {
+    fun toUiEntity(): ToUiEntity {
+        return ToUiEntity(
+            day = this.day,
+            month = this.month,
+            year = this.year
+        )
+    }
+}
 
 @Serializable
 data class Broadcast(
