@@ -25,6 +25,7 @@ import com.ukrdroiddev.presentation.ui.theme.MyAnimeListTheme
 import org.junit.Test
 
 class AnimeListItemTest {
+
     private val sampleItem = AnimeDataUiEntity(
         malId = 1,
         title = "Naruto",
