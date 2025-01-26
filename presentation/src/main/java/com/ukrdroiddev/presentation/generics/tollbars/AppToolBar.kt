@@ -1,4 +1,4 @@
-package com.ukrdroiddev.presentation.screens.tollbars
+package com.ukrdroiddev.presentation.generics.tollbars
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons

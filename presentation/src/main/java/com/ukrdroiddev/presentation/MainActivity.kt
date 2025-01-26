@@ -13,12 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.NavHost
+import com.ukrdroiddev.presentation.generics.tollbars.AppToolBar
+import com.ukrdroiddev.presentation.generics.tollbars.NavigateUpAction
 import com.ukrdroiddev.presentation.navigation.AnimeListRoute
 import com.ukrdroiddev.presentation.navigation.LocalNavHostController
 import com.ukrdroiddev.presentation.navigation.rememberNavigation
 import com.ukrdroiddev.presentation.screens.animeList.animeListScreen
-import com.ukrdroiddev.presentation.screens.tollbars.AppToolBar
-import com.ukrdroiddev.presentation.screens.tollbars.NavigateUpAction
 import com.ukrdroiddev.presentation.ui.theme.MyAnimeListTheme
 
 class MainActivity : ComponentActivity() {

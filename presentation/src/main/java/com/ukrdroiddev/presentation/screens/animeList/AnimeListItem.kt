@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -45,9 +44,9 @@ import com.ukrdroiddev.domain.entities.ThemeUiEntity
 import com.ukrdroiddev.domain.entities.ToUiEntity
 import com.ukrdroiddev.domain.entities.TrailerUiEntity
 import com.ukrdroiddev.presentation.R
-import com.ukrdroiddev.presentation.generics.LabelMediumText
-import com.ukrdroiddev.presentation.generics.LabelSmallText
-import com.ukrdroiddev.presentation.generics.TitleText
+import com.ukrdroiddev.presentation.generics.textFields.LabelMediumText
+import com.ukrdroiddev.presentation.generics.textFields.LabelSmallText
+import com.ukrdroiddev.presentation.generics.textFields.TitleText
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import java.text.DecimalFormat
@@ -68,7 +67,6 @@ fun AnimeListItem(item: AnimeDataUiEntity) {
                 modifier = Modifier
                     .clip(RoundedCornerShape(dimensionResource(R.dimen.image_corner)))
                     .weight(1f)
-                    .fillMaxSize()
 
             )
             Spacer(modifier = Modifier.width(dimensionResource(R.dimen.small_padding)))

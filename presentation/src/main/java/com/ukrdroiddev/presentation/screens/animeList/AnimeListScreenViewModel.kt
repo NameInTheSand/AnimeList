@@ -24,6 +24,10 @@ class AnimeListScreenViewModel(
         loadData()
     }
 
+    fun reLoadData() {
+        loadData()
+    }
+
     private fun loadData() {
         _screenState.value = AnimeListState.Loading
         viewModelScope.launch(Dispatchers.IO) {

@@ -83,4 +83,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Lottie animations
+    implementation(libs.lottie.compose)
 }
